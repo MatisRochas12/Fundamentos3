@@ -1,0 +1,12 @@
+Algoritmo CalcularlaCircuferencia
+	p <- 3.141516
+	Escribir "Ingrese el valor del diametro"
+	Leer diametro
+	c <- p * diametro
+	a <- 4 * p * (diametro/2) * (diametro/2)
+	v <- p/6 * diametro * diametro * diametro
+	Escribir "La circunferencia es: ", c
+	Escribir "El area es: ", a
+	Escribir "El volumen es: " v
+FinAlgoritmo
+
