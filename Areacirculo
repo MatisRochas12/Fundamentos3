@@ -1,0 +1,13 @@
+#include <iostream>
+#include "Math.h"
+
+int main()
+{
+    using namespace std;
+    float p = 3.141516, radio, Area;
+    cout << "Ingrese el valor de: ";
+    cin >> radio;
+    Area = p * pow(radio, 2);                          //radio * radio;
+    cout << "El areal es: " << Area;
+    return 0;
+}
