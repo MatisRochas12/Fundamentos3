@@ -1,0 +1,11 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string name;
+    cout << "Pon tu nombre: ";
+    cin >> name;
+    cout << "Hola Mundo " << name;
+    return 0;
+}
