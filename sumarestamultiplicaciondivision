@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int main () {
+    double x, y, s, r, m, d;
+    cout << "ingresar primer valor = ";
+    cin >> x;
+    cout << "ingresar segundo valor = ";
+    cin >> y;
+    s = x + y;
+    r = x - y;
+    m = x * y;
+    cout << "Suma = " << s << endl;
+    cout << "Resta = " << r << endl;
+    cout << "Multiplicacion =" << m << endl;
+    if (y == 0) {
+        cout << "division no disponible";
+    } else {
+        d = x/y;
+        cout <<"Division =" << d;
+    }
+    
+    return 0;
+}
