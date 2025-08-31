@@ -5,6 +5,6 @@ int main() {
     cout << "Bajo el cielo mas puro de america" << endl;
     cout <<"En la tierra de nuflo de chavez" << endl;
     cout << "Libertad van trinando las aves" << endl;
-    cout <<"del su veste sustentando el primos" << endl;
+    cout <<"de su veste sustentando el primor" << endl;
     return 0;
 }
