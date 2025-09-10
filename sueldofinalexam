@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	double sb, bt, ba, sf;
+	cout << "Ingrese sueldo Basico: ";
+	cin >> sb;
+	cout << "Ingrese bono transporte: ";
+	cin >> bt;
+	cout << "Ingrese bonificaaion de antiguedad: ";
+	cin >> ba;
+	sf = sb + bt + ba;
+	cout << "Sueldo Final es: " << sf;
+	return 0;
+}
