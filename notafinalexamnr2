@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	double nf;
+	cout << "Ingrese nota final: ";
+	cin >> nf;
+	if (nf < 0 || nf > 100)
+	{
+		cout << "error";
+	}
+	else
+	{
+		if (nf >= 51)
+		{
+			cout << "aprobo";
+		}
+		else 
+		{
+			cout << "Reprobo";
+		}
+	}
+	return 0;
+}
