@@ -1,0 +1,8 @@
+print ('Hola mundo')
+A=int(input("ingrese un dato "))
+B=int(input("ingrese un dato "))
+C=A
+A=B
+B=C
+print("Valor de A= ", A)
+print ("Valor de b= ", B)
