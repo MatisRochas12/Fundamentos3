@@ -1,0 +1,17 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int n;
+    double p = 2;
+    cout << "Ingrese un número: ";
+    cin >> n;
+
+    for (int i = 1; i <= n; i++) {
+        cout <<pow(i, p) << endl;
+    }
+
+    return 0;
+}
