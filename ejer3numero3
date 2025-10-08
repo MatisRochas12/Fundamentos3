@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N, digito, contador = 0;
+    
+do {
+    cout << "Ingrese el valor: ";
+    cin >> N;
+} while (N <= 0);
+
+    while (N > 0) {
+        digito = N % 10;  
+        
+        if (digito % 2 == 0) {  
+            contador=contador + 1;  
+        }
+        N = N / 10;
+    }
+    
+    cout << "El número tiene " << contador << " dígitos pares." << endl;
+    
+    return 0;
+}
