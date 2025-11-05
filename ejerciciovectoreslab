@@ -1,0 +1,105 @@
+#include <iostream>
+#define MAX 100 
+
+using namespace std;
+
+// Prototipos de las funciones 
+void cargar(int vec[], int tam);
+void mostrar(int vec[], int tam);
+float promedio(int vec[], int tam);
+int maximo(int vec[], int tam);
+// como devolver dos valores
+int devolvermaxmin(int vec[], int tam, int& min);
+
+int main() {
+    int opcion, A[MAX], n, minimo;
+
+    // Pedir tamaño del arreglo
+    do {
+        cout << "Ingrese el tamaño del arreglo (max " << MAX << "): ";
+        cin >> n;
+    } while (n <= 0 || n > MAX);
+
+    // Menú de opciones
+    do {
+        cout << "\n\tMENU" << endl;
+        cout << "1. Cargar el vector" << endl;
+        cout << "2. Mostrar el vector" << endl;
+        cout << "3. Calcular promedio" << endl;
+        cout << "4. Obtener valor máximo" << endl;
+        cout << "5. Obtener mayor menor" << endl;
+        cout << "0. Salir" << endl;
+        cout << "Opcion: ";
+        cin >> opcion;
+
+        switch (opcion) {
+        case 1:
+            cargar(A, n);
+            break;
+        case 2:
+            mostrar(A, n);
+            break;
+        case 3:
+            cout << "El promedio es: " << promedio(A, n) << endl;
+            break;
+        case 4:
+            cout << "El valor máximo del vector es: " << maximo(A, n) << endl;
+            break;
+        case 5: cout << "El mayor es: " << devolvermaxmin(A, n, minimo)<< endl;
+            cout << "el menor es " << minimo<< endl;
+        case 0:
+            cout << "Saliendo del programa..." << endl;
+            break;
+        default:
+            cout << "Opcion invalida. Intente nuevamente." << endl;
+        }
+    } while (opcion != 0);
+
+    return 0;
+}
+
+// Cargar los datos del vector
+void cargar(int vec[], int tam) {
+    for (int i = 0; i < tam; i++) {
+        cout << "vec[" << i << "] = ";
+        cin >> vec[i];
+    }
+}
+
+// Mostrar el contenido del vector
+void mostrar(int vec[], int tam) {
+    cout << "Contenido del vector:" << endl;
+    for (int i = 0; i < tam; i++) {
+        cout << "vec[" << i << "] = " << vec[i] << endl;
+    }
+}
+
+// Calcular el promedio
+float promedio(int vec[], int tam) {
+    float suma = 0;
+    for (int i = 0; i < tam; i++) {
+        suma += vec[i];
+    }
+    return suma / tam;
+}
+
+// Calcular el valor máximo
+int maximo(int vec[], int tam) {
+    int max = vec[0];
+    for (int i = 1; i < tam; i++) {
+        if (vec[i] > max)
+            max = vec[i];
+    }
+    return max;
+}
+int devolvermaxmin(int vec[], int tam, int& min) {
+    int max = vec[0];
+    min = vec[0];
+    for (int i = 1; i < tam; i++) {
+        if (max < vec[i])
+            max = vec[i];
+        if (min > vec[i])
+            min = vec[i];
+    }
+    return max;
+}
