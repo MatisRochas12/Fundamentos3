@@ -1,0 +1,87 @@
+#include <iostream>
+#define MAX 100
+using namespace std;
+int sumadigitos(int n);
+int potencia(int base, int exponente);
+void serie(double vec[], int N, int X, int B);
+void mostrarserie(double vec[], int N);
+
+int main() {
+	int opcion;
+	do {
+		cout << "Menu" << endl;
+		cout << "1.- Sumar los digitos de un punto" << endl;
+		cout << "2.-Calcular la potencia" << endl;
+		cout << "3.- Generar serie en vector" << endl;
+		cout << "0.- Salir" << endl;
+		cout << "Eliga una opcion" << endl;
+		cin >> opcion;
+		switch (opcion) {
+		case 1: {
+			int n;
+			do {
+				cout << "ingrese un numero entero positivo" << endl;
+				cin >> n;
+			} while (n <= 0);
+			cout << "La suma de los digitos es: " << sumadigitos(n) << endl;
+			break;
+		}
+		case 2: {
+			int base, exponente;
+			cout << "ingrese la base: ";
+			cin >> base;
+			cout << "Ingrese el exponente: ";
+			cin >> exponente;
+			cout << "El resultado es " << potencia(base, exponente) << endl;
+		}
+		case 3: {
+			int N, X, B;
+			double vec[MAX];
+			do {
+				cout << "ingrese el tamaño del vector (N <)= " << MAX << "): ";
+				cin >> N;
+			} while (N <= 0 || N > MAX);
+			cout << "Ingrese X: ";
+			cin >> X;
+			cout << "Ingrese B: ";
+			cin >> B;
+			serie(vec, N, X, B);
+			mostrarserie(vec, N);
+			break;
+		}
+		case 0:
+			cout << "Salir";
+			break;
+		default :
+			cout << "Elegir una opcion valida" << endl;
+		}
+	} while (opcion != 0);
+	return 0;
+}
+int sumadigitos(int n) {
+	int suma = 0, digito;
+	while (n > 0) {
+		digito = n % 10;
+		suma += digito;
+		n /= 10;
+	}
+	return 0;
+}
+int potencia(int base, int exponente) {
+	int resultado = 1;
+	for (int i = 1; i <= exponente; i++) {
+		resultado *= base;
+	}
+	return resultado;
+}
+void serie(double vec[], int N, int X, int B) {
+	for (int k = 1; k <= N; k++) {
+		vec[k - 1] = k * X * potencia(B, k );
+	}
+}
+void mostrarserie(double vec[], int N) {
+	cout << "Elementos de la serie "<<endl;
+	for (int i = 0; i < N; i++) {
+		cout << "vector " << i << " = " << vec[i] << endl;
+	}
+}
