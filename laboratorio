@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+void ventasemanal(int& valor);
+
+int main()
+{
+    int valor = 0;   
+
+    ventasemanal(valor);
+
+    cout << "El monto final es: " << valor << endl;
+
+    return 0;
+}
+
+void ventasemanal(int& valor) {
+
+    int n;
+    for (int i = 0; i < 7; i++) { 
+        cout << "Venta del dia " << i + 1 << " = ";
+        cin >> n;
+        valor = valor + n;
+    }
+    valor = valor - (valor * 0.1);
+}
